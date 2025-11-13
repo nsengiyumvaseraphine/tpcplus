@@ -1,0 +1,108 @@
+1. Difference entre classe et objet : 
+
+        -> Classe = définition (type) qui décrit attributs et méthodes.
+
+        -> Objet = instance concrète de la classe, avec des valeurs pour les attributs.
+
+2. Encapsulation
+
+     -> Cacher les données (attributs private) et fournir des accesseurs (get/set).
+
+    -> Exemple : attribut private int age; + int getAge() const; void setAge(int);.
+
+3.  La différence entre un constructeur par défaut et un constructeur paramétré :
+
+      -> Par défaut : pas d’arguments (ou valeur par défaut).
+
+      -> Paramétré : accepte des arguments pour initialiser l’objet.
+
+4. Destructeur: 
+
+   -> Est un Méthode ~NomDeLaClass();  il est appelée à la destruction d’un objet (libération ressources).
+
+5. la différence entre composition et agrégation : 
+
+   -> Composition : partie faisant entièrement partie du tout (durée de vie liée).
+
+   -> Agrégation : relation "a un" plus faible ; durée de vie indépendante.
+
+6. Héritage : 
+
+  -> Permet réutiliser et spécialiser une classe; 
+  -> ex : class Derived : public Base { ... };
+
+7. Polymorphisme : 
+
+  -> il Permet d’utiliser une interface commune pour différents comportements (liaison dynamique via fonctions         virtual et pointeurs/références sur la classe de base).
+
+8. La différence entre liaison statique et liaison dynamique
+
+    -> Statique : choix de la fonction à la compilation (surcharge, fonctions non virtuelles).
+
+    -> Dynamique : choix à l’exécution (fonctions virtual).
+
+9. Les classes abstraites et les interfaces en C++  sont : 
+
+   -> Classe abstraite : contient au moins une méthode pure virtual void f() = 0;.
+
+    -> En C++ on implémente des interfaces via classes abstraites.
+
+10. const dans les méthodes : 
+
+   -> Indique que la méthode n’altère pas l’objet (int get() const;), permet d’appeler la méthode sur objets const.
+
+11. la différence entre une méthode statique et une méthode d’instance:
+
+    -> Statique : appartient à la classe (static), pas d’accès this.
+
+    -> Instance : appartient à un objet.
+
+12. Le rôle du mot-clé friend dans une classe
+
+    -> Il Permet à une fonction ou une autre classe d’accéder aux membres privés d’une classe.
+
+13. les membres static dans une classe : 
+
+    -> ils sont Partagés par toutes les instances ; utile pour compteurs ou constantes de classe.
+
+14. La différence entre redéfinition et surcharge de fonctions :
+
+ -> Surcharge (overload) = mêmes nom, signatures différentes dans même portée.
+
+ -> Redéfinition (override) = fonction virtuelle de la classe de base redéfinie dans dérivée.
+
+15. Le destructeur doit être déclaré virtual dans une classe de base polymorphe :  
+
+  -> C'est nécessaire pour assurer destruction correcte des objets dérivés via pointeur sur base.
+
+16. Pour déclarer et implémenter un constructeur de copie : 
+
+  -> NomDeLaClasse(const NomDeLaClasse& other); et implémentation NomDeLaClasse::NomDeLaClasse(const NomDeLaClasse& o) { ... }
+
+17. Surcharge opérateur =
+
+   -> NomDeLaClasse& operator=(const NomDeLaClasse& other);
+   —>  redéfinir si la classe gère ressources (deep copy).
+
+18. Des fonctions amies pour accéder aux membres privés:
+
+  -> Permettent d’accéder aux membres privés sans être membre de la classe ; 
+    elles sont souvent utilisées pour opérateurs non-membres.
+
+19. La différence entre public, protected et private lors d’un héritage est que : 
+
+   -> public : public de la base reste public ; protected reste protected.
+
+   -> protected : public et protected de base deviennent protected.
+
+   -> private : public/protected de base deviennent private dans dérivée.
+
+20. un Template de classe: 
+   -> defintion : est un modèle générique qui permet de créer des classes indépendantes du type de données manipulé.
+   -> ex : template<typename T> 
+            class Boite { 
+               T val; 
+               public: Boite(T v):val(v){}; 
+               void afficher() 
+               const { std::cout<<val; } 
+               };
